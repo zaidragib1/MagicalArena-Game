@@ -8,8 +8,7 @@ public class Game {
         this.player2 = player2;
         this.dice = new Dice();
     }
-
-
+    
      // Method to start the game.
     public void start() {
         // Determine initial attacker and defender based on their health
@@ -47,8 +46,14 @@ public class Game {
         if (damageDealt > 0) {
             defender.reduceHealth(damageDealt);
         }
+        // Print the outcome of the turn
+        printTurnOutcome(attacker, attackRoll, defender, defenseRoll);
     }
 
+    private void printTurnOutcome(Player attacker, int attackRoll, Player defender, int defenseRoll) {
+        System.out.printf("%s attacks and rolls %d. %s defends and rolls %d. %s's health is reduced to %d.\n",
+                attacker.getName(), attackRoll, defender.getName(), defenseRoll, defender.getName(), defender.getHealth());
+    }
 
 
 }
