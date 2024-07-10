@@ -23,5 +23,15 @@ public class Main {
         game = new Game(playerA, playerB);
         System.out.println("Making sure Player B will win!");
         game.start();
+
+        // Test Case 4: Making sure Player A will win!
+        playerA = new Player("Player A", 50, 5, 10);
+        playerB = new Player("Player B", 100, 10, 5);
+        playerB.reduceHealth(100);
+        System.out.println("Making sure Player A will win!");
+        game = new Game(playerA, playerB);
+        game.start();
+
+
     }
 }
